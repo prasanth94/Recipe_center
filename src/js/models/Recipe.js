@@ -17,8 +17,9 @@ export default class Recipe {
         console.log(error);
         alert("something went wrong :(");
     }
+  }
 
-    calcTime(){
+    calcTime() {
       const numIng = this.ingredients.length;
       const periods = Math.ceil(numIng / 3);
       this.time = periods * 15;
@@ -27,5 +28,4 @@ export default class Recipe {
     calcServings() {
       this.servings = 4;
     }
-  }
 }
