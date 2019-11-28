@@ -32,6 +32,7 @@ if(query){
   try{
     await state.search.getResults();
 
+
     //5. Render Results
     clearLoader();
     searchView.renderResults(state.search.result);
@@ -74,6 +75,7 @@ const controlRecipe = async () => {
     try{
       //Get Recipe data
       await state.recipe.getRecipe();
+      state.recipe.parseIngredients();
       //Calculate servings and time
       state.recipe.calcTime();
       state.recipe.calcServings();
