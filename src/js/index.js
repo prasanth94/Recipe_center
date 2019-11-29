@@ -159,6 +159,15 @@ elements.recipe.addEventListener('click', e => {
   }
 });
 
+window.addEventListener('load', () => {
+  state.likes = new Likes();
+  state.likes.readStorage();
+
+  likesView.toggleLikesMenu(state.likes.getnumLikes());
+
+  state.likes.likes.forEach(like => likesView.renderLike(like));
+});
+
 elements.shopping.addEventListener('click', e => {
   const id = e.target.closest('.shopping__item').dataset.itemid;
 
